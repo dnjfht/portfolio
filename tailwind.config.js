@@ -6,36 +6,44 @@ module.exports = {
       primary: {
         DEFAULT: "#CCE4F0",
         1: "#99C9E2",
-        2: "#66ADD3",
-        3: "#3392C5",
-        4: "#0077B6",
       },
       light: {
         text: {
           DEFAULT: "#212529",
           1: "#CED4DA",
-          2: "#868E96",
-          3: "#495057",
         },
         background: {
           DEFAULT: "#ffffff",
-          1: "#f1f3f5",
-          2: "#868E96",
-          3: "#495057",
+          1: "rgba(255,255,255,0.03)",
+          2: "rgba(255,255,255,0.2)",
         },
       },
       dark: {
         text: {
           DEFAULT: "#ffffff",
           1: "#D9D9D9",
-          2: "#ACACAC",
-          3: "#595959",
         },
+        background: {
+          DEFAULT: "#000000",
+          1: "rgba(0,0,0,0.03)",
+          2: "rgba(0,0,0,0.2)",
+        },
+      },
+      text: {
+        DEFAULT: "#000000",
+        1: "#3a3a3a",
+        2: "#7c7c7c",
+        3: "#b1b1b1",
+        4: "#d2d2d2",
       },
     },
 
-    extend: {},
+    extend: {
+      spacing: {
+        smContentHeight: "calc(100% - 80px)",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
   darkMode: "class",
 };

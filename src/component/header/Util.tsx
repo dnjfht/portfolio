@@ -7,11 +7,11 @@ export interface MenuType {
 
 export default function Util({ icon, onClick, fontSize, style }: MenuType) {
   return (
-    <li
+    <div
       onClick={onClick}
       className={`${fontSize} ${style} hover:text-[#1ff4a6] transition-color duration-500 cursor-pointer`}
     >
       {icon}
-    </li>
+    </div>
   );
 }

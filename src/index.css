@@ -14,3 +14,17 @@
 body {
   font-family: "Rajdhani", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 100%;
+  background-color: rgba(31, 244, 166, 0.8);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
