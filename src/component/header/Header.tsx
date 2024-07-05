@@ -1,7 +1,5 @@
 // import { SNS_ITEMS } from "../../constants";
 import { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
-import { isModalOpenState } from "../../recoil/modal";
 import GnbMenu from "./GnbMenu";
 import SnsMenu from "./SnsMenu";
 
@@ -12,12 +10,21 @@ import { CiLight, CiMail } from "react-icons/ci";
 import { CgMenuMotion } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+interface HeaderProps {
+  setIsCategoryOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+}
+
+export default function Header({
+  setIsCategoryOpen,
+  setIsModalOpen,
+  isModalOpen,
+}: HeaderProps) {
   const navigate = useNavigate();
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
-  const [currentScreenSize, setCurrentScreenSize] = useState("");
+  const [currentScreenSize, setCurrentScreenSize] = useState<string>("");
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -77,7 +84,7 @@ export default function Header() {
     },
     {
       icon: <CgMenuMotion />,
-      onClick: () => {},
+      onClick: () => setIsCategoryOpen(true),
       fontSize: "text-[0.9rem] lg:text-[1.1rem]",
       style:
         "p-2 lg:p-3 border-[1px] border-solid border-[#696969] rounded-full",
@@ -114,7 +121,7 @@ export default function Header() {
 
   return (
     <div className="box-border fixed top-0 left-0 flex w-full py-6 bg-light-background dark:bg-[url('./assets/images/bg.png')] lg:py-16 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)]">
-      <div className="box-border w-2/3 px-[10%] md:px-[6rem] flex justify-between">
+      <div className="box-border w-2/3 px-[10%] lg:px-[6rem] flex justify-between">
         <div
           onClick={() => {
             navigate("/");

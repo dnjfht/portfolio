@@ -1,5 +1,3 @@
-import { useRecoilState } from "recoil";
-import { isModalOpenState } from "../../recoil/modal";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -9,6 +7,11 @@ import Util from "../header/Util";
 import ModalInputContent from "./ModalInputContent";
 
 import { PiHandWavingThin, PiRabbitThin } from "react-icons/pi";
+
+interface TransitionsModalProps {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+}
 
 const style = {
   position: "absolute" as "absolute",
@@ -26,9 +29,10 @@ const style = {
   overflowY: "scroll",
 };
 
-export default function TransitionsModal() {
-  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState);
-
+export default function TransitionsModal({
+  setIsModalOpen,
+  isModalOpen,
+}: TransitionsModalProps) {
   return (
     <Modal
       aria-labelledby="transition-modal-title"

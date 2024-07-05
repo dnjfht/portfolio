@@ -1,32 +1,34 @@
 import { TextField } from "@mui/material";
+import Input from "../input/Input";
+import TextArea from "../input/TextArea";
 
 export default function ModalInputContent() {
+  const style = { mt: 3, width: "100%", outline: "none" };
+  const style2 = { mt: 5, width: "100%", outline: "none" };
+
   return (
     <form>
-      <TextField
-        required
-        id="outlined-required"
+      <Input
+        isRequired={true}
+        type="text"
         label="Name"
-        // defaultValue="홍길동"
         placeholder="Insert your name"
-        // helperText="Insert your name"
-        sx={{ mt: 5, width: "100%", outline: "none" }}
+        style={style2}
       />
-      <TextField
-        required
-        id="outlined-required"
+      <Input
+        isRequired={true}
+        type="email"
         label="Email"
         placeholder="Insert your email"
-        sx={{ mt: 3, width: "100%", outline: "none" }}
+        style={style}
+        helperText="이메일 주소에 @를 포함해주세요."
       />
-      <TextField
-        required
-        id="outlined-multiline-static"
-        label="message"
-        placeholder="Insert your message here"
-        multiline
+      <TextArea
+        isRequired={true}
+        label="Message"
         rows={4}
-        sx={{ mt: 3, width: "100%", outline: "none" }}
+        placeholder="Insert your message here"
+        style={style}
       />
 
       <button
