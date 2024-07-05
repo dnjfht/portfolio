@@ -19,7 +19,6 @@ export default function Input({
   helperText,
 }: InputProps) {
   const [text, onTextChange] = useInput("");
-  console.log("input", text);
 
   return (
     <TextField

@@ -19,7 +19,6 @@ export default function TextArea({
   helperText,
 }: InputProps) {
   const [text, onTextChange] = useInput("");
-  console.log("textArea", text);
 
   return (
     <TextField

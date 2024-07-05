@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import Button from "../button/Button";
 import Input from "../input/Input";
 import TextArea from "../input/TextArea";
 
@@ -7,7 +7,11 @@ export default function ModalInputContent() {
   const style2 = { mt: 5, width: "100%", outline: "none" };
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <Input
         isRequired={true}
         type="text"
@@ -31,12 +35,13 @@ export default function ModalInputContent() {
         style={style}
       />
 
-      <button
+      <Button
         type="submit"
-        className="box-border w-full p-3 mt-5 bg-[#0dd189] text-[white] rounded-lg border-[1px] border-solid border-white hover:bg-[white] hover:border-[#0dd189] hover:text-[#0dd189] transition-color duration-500"
-      >
-        보내기
-      </button>
+        btnContent="메일 전송하기"
+        width="w-full"
+        styleP="p-3"
+        styleMargin="mt-5"
+      />
     </form>
   );
 }
