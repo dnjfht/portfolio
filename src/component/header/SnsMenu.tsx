@@ -1,4 +1,4 @@
-import Util from "./Util";
+import IconUtil from "./IconUtil";
 
 interface SnsMenuProps {
   items: SnsMenuType[];
@@ -16,7 +16,7 @@ export default function SnsMenu({ items, hiddenStyle }: SnsMenuProps) {
   return (
     <ul className={`${hiddenStyle} flex items-center gap-x-6`}>
       {items.map((item) => (
-        <Util
+        <IconUtil
           onClick={() => {
             window.open(item.link, "_blank");
           }}

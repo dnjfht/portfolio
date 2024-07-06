@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
-import Util from "../header/Util";
+import IconUtil from "../header/IconUtil";
 import ModalInputContent from "./ModalInputContent";
 
 import { PiHandWavingThin, PiRabbitThin } from "react-icons/pi";
@@ -49,7 +49,7 @@ export default function TransitionsModal({
     >
       <Fade in={isModalOpen}>
         <Box sx={style}>
-          <Util
+          <IconUtil
             onClick={() => setIsModalOpen(false)}
             icon={<PiHandWavingThin />}
             fontSize="text-[1.5rem]"
@@ -75,7 +75,7 @@ export default function TransitionsModal({
 
           <div className="w-full mt-8">
             <div className="box-border w-full p-5 rounded-lg shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)] flex flex-col items-center justify-center hover:border-[1px] hover:border-solid hover:border-[#1ff4a6] transition-color duration-500">
-              <Util icon={<PiRabbitThin />} fontSize="text-[2.5rem]" />
+              <IconUtil icon={<PiRabbitThin />} fontSize="text-[2.5rem]" />
               <p className="mt-2">Email</p>
               <p className="text-text-2">dnjfht@gmail.com</p>
             </div>

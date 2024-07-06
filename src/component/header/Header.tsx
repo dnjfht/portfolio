@@ -9,21 +9,19 @@ import { PiEnvelopeSimpleOpenThin, PiMoonStarsThin } from "react-icons/pi";
 import { CiLight, CiMail } from "react-icons/ci";
 import { CgMenuMotion } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+import { isCategoryOpenState } from "../../recoil/modal";
+import { useSetRecoilState } from "recoil";
 
 interface HeaderProps {
-  setIsCategoryOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isModalOpen: boolean;
 }
 
-export default function Header({
-  setIsCategoryOpen,
-  setIsModalOpen,
-  isModalOpen,
-}: HeaderProps) {
+export default function Header({ setIsModalOpen, isModalOpen }: HeaderProps) {
   const navigate = useNavigate();
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const setIsCategoryOpen = useSetRecoilState(isCategoryOpenState);
   const [currentScreenSize, setCurrentScreenSize] = useState<string>("");
 
   useEffect(() => {

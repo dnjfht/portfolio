@@ -41,6 +41,7 @@ module.exports = {
     extend: {
       spacing: {
         smContentHeight: "calc(100% - 80px)",
+        categoryMenuHeight: "calc(100% - 43px)",
       },
     },
   },

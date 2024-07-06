@@ -1,19 +1,17 @@
+import { useRecoilState } from "recoil";
+import { isCategoryOpenState } from "../../recoil/modal";
 import SnsMenu from "../header/SnsMenu";
-import Util from "../header/Util";
+import IconUtil from "../header/IconUtil";
+import CategoryMenuWrap from "./CategoryMenuWrap";
 
 import { IoLogoInstagram, IoLogoGithub } from "react-icons/io";
 import { FaBlogger } from "react-icons/fa";
 import { PiHandWavingThin } from "react-icons/pi";
 
-interface CategoryProps {
-  isCategoryOpen: boolean;
-  setIsCategoryOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export default function Category() {
+  const [isCategoryOpen, setIsCategoryOpen] =
+    useRecoilState(isCategoryOpenState);
 
-export default function Category({
-  isCategoryOpen,
-  setIsCategoryOpen,
-}: CategoryProps) {
   const snsItems = [
     {
       link: "https://github.com/dnjfht",
@@ -40,23 +38,25 @@ export default function Category({
     >
       <div className="order-2 w-full h-full lg:w-1/3 lg:order-1">
         <img
-          className="object-cover lg:h-full"
+          className="object-cover h-full"
           src={process.env.PUBLIC_URL + "/images/category_img.png"}
           alt="category_img"
         />
       </div>
 
-      <div className="order-1 w-full lg:h-full lg:w-2/3 lg:order-2">
-        <div className="flex w-full box-border px-[10%] lg:px-[6rem] justify-between py-10 lg:py-20 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)]">
+      <div className="order-1 w-full lg:h-full lg:w-2/3 lg:order-2 px-[10%] lg:px-[6rem] py-10 lg:py-20 box-border">
+        <div className="flex w-full box-border justify-between lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)]">
           <SnsMenu items={snsItems} />
 
-          <Util
+          <IconUtil
             onClick={() => setIsCategoryOpen(false)}
             icon={<PiHandWavingThin />}
             fontSize="text-[0.9rem] lg:text-[1.1rem]"
             style="p-2 lg:p-3 border-[1px] border-solid border-[#696969] rounded-full"
           />
         </div>
+
+        <CategoryMenuWrap />
       </div>
     </div>
   );
