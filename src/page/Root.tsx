@@ -16,7 +16,7 @@ export default function Root() {
   }, []);
 
   return (
-    <div className="bg-light-background-1 dark:bg-[url('./assets/images/bg.png')] text-light-text dark:text-dark-text w-full bg-cover bg-no-repeat h-screen font-thin text-white">
+    <div className="bg-light-background-1 dark:bg-[url('./assets/images/bg.png')] text-light-text dark:text-dark-text w-full bg-cover bg-no-repeat h-screen font-thin text-white whitespace-pre-wrap">
       <ScrollRestoration />
       <Header setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
 

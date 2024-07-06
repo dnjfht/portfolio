@@ -22,7 +22,7 @@ export default function CategoryMenu({ items, style }: CategoryMenuProps) {
           fontSize={item.fontSize}
           fontWeight={item.fontWeight}
           onClick={item.onClick}
-          style={style}
+          style={item?.style}
         />
       ))}
     </ul>

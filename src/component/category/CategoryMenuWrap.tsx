@@ -11,19 +11,40 @@ export default function CategoryMenuWrap() {
   const categoryItems = [
     {
       text: "HOME",
-      fontSize: "md:text-[4rem] text-[2.25rem]",
+      fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/");
         setIsCategoryOpen(false);
       },
+      style: "xl:mb-0 mb-2",
     },
     {
       text: "ABOUT",
-      fontSize: "md:text-[4rem] text-[2.25rem]",
+      fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/about");
+        setIsCategoryOpen(false);
+      },
+      style: "xl:mb-0 mb-2",
+    },
+    {
+      text: "PORTFOLIO",
+      fontSize: "xl:text-[4rem] text-[2.5rem]",
+      fontWeight: "font-bold",
+      onClick: () => {
+        navigate("/portfolio");
+        setIsCategoryOpen(false);
+      },
+      style: "xl:mb-0 mb-2",
+    },
+    {
+      text: "CONTACT",
+      fontSize: "xl:text-[4rem] text-[2.5rem]",
+      fontWeight: "font-bold",
+      onClick: () => {
+        navigate("/contact");
         setIsCategoryOpen(false);
       },
     },
@@ -31,33 +52,33 @@ export default function CategoryMenuWrap() {
 
   const categoryDetailItems = [
     {
-      text: "코드를 통하여 소통하는 개발자,\n Yoo Seungmin.",
+      text: "코드를 통하여 소통하는 개발자, \n Yoo Seungmin.",
       fontSize: "text-[0.875rem] md:text-[1rem]",
-      style: "text-text-2 dark:text-text-3 mb-5 whitespace-pre-line",
+      style: "text-text-2 dark:text-text-3 mb-5",
     },
     {
-      text: "제 전화번호는,\n 010-5220-2817 입니다.",
+      text: "제 전화번호는, \n 010-5220-2817 입니다.",
       fontSize: "text-[0.875rem] md:text-[1rem]",
-      style: "text-text-2 dark:text-text-3 mb-5 whitespace-pre-line",
+      style: "text-text-2 dark:text-text-3 mb-5",
     },
     {
-      text: "제 github 주소는,\n https://github.com/dnjfht 입니다.",
+      text: "제 github 주소는, \n https://github.com/dnjfht 입니다.",
       fontSize: "text-[0.875rem] md:text-[1rem]",
-      style: "text-text-2 dark:text-text-3 mb-5 whitespace-pre-line",
+      style: "text-text-2 dark:text-text-3 mb-5",
     },
     {
-      text: "제 tistory 주소는,\n https://dnjfht.tistory.com 입니다.",
+      text: "제 tistory 주소는, \n https://dnjfht.tistory.com 입니다.",
       fontSize: "text-[0.875rem] md:text-[1rem]",
-      style: "text-text-2 dark:text-text-3 whitespace-pre-line",
+      style: "text-text-2 dark:text-text-3",
     },
   ];
 
   return (
     <div className="w-full pt-10 overflow-scroll md:flex md:items-center lg:pt-20 lg:h-categoryMenuHeight">
-      <CategoryMenu items={categoryItems} style="md:w-1/2 w-full" />
+      <CategoryMenu items={categoryItems} style="w-full" />
       <CategoryMenu
         items={categoryDetailItems}
-        style="md:w-1/2 w-full pt-20 md:pt-0 box-border md:text-right"
+        style="w-full pt-20 md:pt-0 box-border md:text-right"
       />
     </div>
   );
