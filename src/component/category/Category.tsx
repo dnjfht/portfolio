@@ -1,34 +1,11 @@
-import { useRecoilState } from "recoil";
-import { isCategoryOpenState } from "../../recoil/modal";
+import { useRecoilValue } from "recoil";
+import { isCategoryOpenState } from "../../recoil/category";
 import SnsMenu from "../header/SnsMenu";
-import IconUtil from "../header/IconUtil";
+import GnbMenu from "../header/GnbMenu";
 import CategoryMenuWrap from "./CategoryMenuWrap";
 
-import { IoLogoInstagram, IoLogoGithub } from "react-icons/io";
-import { FaBlogger } from "react-icons/fa";
-import { PiHandWavingThin } from "react-icons/pi";
-
 export default function Category() {
-  const [isCategoryOpen, setIsCategoryOpen] =
-    useRecoilState(isCategoryOpenState);
-
-  const snsItems = [
-    {
-      link: "https://github.com/dnjfht",
-      icon: <IoLogoGithub />,
-      fontSize: "text-[1.4rem]",
-    },
-    {
-      link: "https://dnjfht.tistory.com/",
-      icon: <FaBlogger />,
-      fontSize: "text-[1.4rem]",
-    },
-    {
-      link: "https://www.instagram.com/ysm09_21/",
-      icon: <IoLogoInstagram />,
-      fontSize: "text-[1.4rem]",
-    },
-  ];
+  const isCategoryOpen = useRecoilValue(isCategoryOpenState);
 
   return (
     <div
@@ -46,14 +23,8 @@ export default function Category() {
 
       <div className="order-1 w-full lg:h-full lg:w-2/3 lg:order-2 px-[10%] lg:px-[6rem] py-10 lg:py-20 box-border">
         <div className="flex w-full box-border justify-between lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)]">
-          <SnsMenu items={snsItems} />
-
-          <IconUtil
-            onClick={() => setIsCategoryOpen(false)}
-            icon={<PiHandWavingThin />}
-            fontSize="text-[0.9rem] lg:text-[1.1rem]"
-            style="p-2 lg:p-3 border-[1px] border-solid border-[#696969] rounded-full"
-          />
+          <SnsMenu hideDefaultItems={false} />
+          <GnbMenu hideDefaultItems={false} />
         </div>
 
         <CategoryMenuWrap />

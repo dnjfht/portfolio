@@ -1,3 +1,5 @@
+import { useRecoilState } from "recoil";
+import { ismodalOpenState } from "../../recoil/modal";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -7,11 +9,6 @@ import IconUtil from "../header/IconUtil";
 import ModalInputContent from "./ModalInputContent";
 
 import { PiHandWavingThin, PiRabbitThin } from "react-icons/pi";
-
-interface TransitionsModalProps {
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isModalOpen: boolean;
-}
 
 const style = {
   position: "absolute" as "absolute",
@@ -29,10 +26,9 @@ const style = {
   overflowY: "scroll",
 };
 
-export default function TransitionsModal({
-  setIsModalOpen,
-  isModalOpen,
-}: TransitionsModalProps) {
+export default function TransitionsModal() {
+  const [isModalOpen, setIsModalOpen] = useRecoilState(ismodalOpenState);
+
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -50,7 +46,7 @@ export default function TransitionsModal({
       <Fade in={isModalOpen}>
         <Box sx={style}>
           <IconUtil
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => setIsModalOpen((prev) => !prev)}
             icon={<PiHandWavingThin />}
             fontSize="text-[1.5rem]"
             style="absolute top-0 right-0 mt-5 mr-5"

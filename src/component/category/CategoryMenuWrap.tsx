@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { isCategoryOpenState } from "../../recoil/modal";
+import { isCategoryOpenState } from "../../recoil/category";
 import CategoryMenu from "./CategoryMenu";
 
 export default function CategoryMenuWrap() {
@@ -15,7 +15,7 @@ export default function CategoryMenuWrap() {
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/");
-        setIsCategoryOpen(false);
+        setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
     },
@@ -25,7 +25,7 @@ export default function CategoryMenuWrap() {
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/about");
-        setIsCategoryOpen(false);
+        setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
     },
@@ -35,7 +35,7 @@ export default function CategoryMenuWrap() {
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/portfolio");
-        setIsCategoryOpen(false);
+        setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
     },
@@ -45,7 +45,7 @@ export default function CategoryMenuWrap() {
       fontWeight: "font-bold",
       onClick: () => {
         navigate("/contact");
-        setIsCategoryOpen(false);
+        setIsCategoryOpen((prev) => !prev);
       },
     },
   ];

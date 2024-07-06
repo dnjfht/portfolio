@@ -2,7 +2,7 @@
 
 import { atom } from "recoil";
 
-export const isCategoryOpenState = atom<boolean>({
-  key: "isCategoryOpenState",
+export const ismodalOpenState = atom<boolean>({
+  key: "isModalOpenState",
   default: false,
 });
