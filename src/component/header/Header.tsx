@@ -48,7 +48,7 @@ export default function Header() {
       : "block";
 
   return (
-    <div className="box-border fixed top-0 left-0 flex w-full py-6 bg-light-background dark:bg-[url('./assets/images/bg.png')] lg:py-16 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)]">
+    <div className="box-border fixed top-0 left-0 flex w-full py-6 bg-light-background dark:bg-[url('./assets/images/bg.png')] lg:py-10 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)] z-[99]">
       <div className="box-border w-2/3 px-[10%] lg:px-[6rem] flex justify-between">
         <div
           onClick={() => {

@@ -18,7 +18,7 @@ export default function Root() {
       <ScrollRestoration />
       <Header />
 
-      <div className="box-border w-full lg:pt-64 pt-44 pb-6 lg:h-full h-smContentHeight px-[10%] md:px-[6rem] overflow-y-scroll">
+      <div className="box-border w-full overflow-y-scroll lg:overflow-hidden lg:pt-[150px] pt-28 lg:h-full h-smContentHeight">
         <Outlet />
       </div>
 

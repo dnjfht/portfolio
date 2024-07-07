@@ -38,13 +38,30 @@ module.exports = {
       },
     },
 
+    screens: {
+      "3sm": "320px",
+      "2sm": "450px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1921px",
+    },
+
     extend: {
       spacing: {
         smContentHeight: "calc(100% - 80px)",
         categoryMenuHeight: "calc(100% - 43px)",
+        mainSliderImgHeight: "calc(100vh - 150px)",
       },
     },
   },
   plugins: [require("tailwind-scrollbar")],
   darkMode: "class",
+
+  corePlugins: {
+    aspectRatio: true,
+    lineClamp: true,
+  },
 };

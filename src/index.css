@@ -15,6 +15,11 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 
+img {
+  display: "block";
+  border: 0;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
