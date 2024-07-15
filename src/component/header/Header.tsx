@@ -4,6 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { isDarkModeState } from "../../recoil/darkMode";
 import GnbMenu from "./GnbMenu";
 import SnsMenu from "./SnsMenu";
+import { AppPage } from "../../constants";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ export default function Header() {
       <div className="box-border w-2/3 px-[10%] lg:px-[6rem] flex justify-between">
         <div
           onClick={() => {
-            navigate("/");
+            navigate(AppPage.HOME);
           }}
           className="text-[1.2rem] lg:text-[1.5rem] hover:text-[#1ff4a6] transition-color duration-500 cursor-pointer"
         >

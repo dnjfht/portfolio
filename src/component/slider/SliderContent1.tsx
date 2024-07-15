@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import TextUtil from "../category/TextUtil";
 import IconUtil from "../header/IconUtil";
 import { SliderContentType } from "../../types/slider";
+import { AppPage } from "../../constants";
 
 import { PiDownloadSimpleThin } from "react-icons/pi";
 
@@ -55,7 +56,7 @@ export default function SliderContent1({
         <div className="absolute text-right bottom-16 right-20">
           <TextUtil
             text="About"
-            onClick={() => navigate("/about")}
+            onClick={() => navigate(AppPage.ABOUT)}
             fontSize="text-[1.8rem]"
             fontWeight="font-black"
             style="text-dark-text"

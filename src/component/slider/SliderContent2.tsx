@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { SliderContentType } from "../../types/slider";
 import TextUtil from "../category/TextUtil";
+import { AppPage } from "../../constants";
 
 export default function SliderContent2({
   currentSlide,
@@ -24,7 +25,7 @@ export default function SliderContent2({
         <div className="absolute text-right bottom-16 right-20">
           <TextUtil
             text="Portfolio"
-            onClick={() => navigate("/portfolio")}
+            onClick={() => navigate(AppPage.PORTFOLIO)}
             fontSize="text-[1.8rem]"
             fontWeight="font-black"
             style="text-dark-text"

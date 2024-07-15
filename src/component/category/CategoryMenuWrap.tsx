@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { isCategoryOpenState } from "../../recoil/category";
 import CategoryMenu from "./CategoryMenu";
+import { AppPage } from "../../constants";
 
 export default function CategoryMenuWrap() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function CategoryMenuWrap() {
       fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
-        navigate("/");
+        navigate(AppPage.HOME);
         setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
@@ -24,7 +25,7 @@ export default function CategoryMenuWrap() {
       fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
-        navigate("/about");
+        navigate(AppPage.ABOUT);
         setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
@@ -34,7 +35,7 @@ export default function CategoryMenuWrap() {
       fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
-        navigate("/portfolio");
+        navigate(AppPage.PORTFOLIO);
         setIsCategoryOpen((prev) => !prev);
       },
       style: "xl:mb-0 mb-2",
@@ -44,7 +45,7 @@ export default function CategoryMenuWrap() {
       fontSize: "xl:text-[4rem] text-[2.5rem]",
       fontWeight: "font-bold",
       onClick: () => {
-        navigate("/contact");
+        navigate(AppPage.CONTACT);
         setIsCategoryOpen((prev) => !prev);
       },
     },
