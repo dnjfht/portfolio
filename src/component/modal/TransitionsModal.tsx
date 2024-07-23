@@ -49,7 +49,7 @@ export default function TransitionsModal() {
             onClick={() => setIsModalOpen((prev) => !prev)}
             icon={<PiHandWavingThin />}
             fontSize="text-[1.5rem]"
-            style="absolute top-0 right-0 mt-5 mr-5"
+            styles="absolute top-0 right-0 mt-5 mr-5"
           />
 
           <div className="w-full">

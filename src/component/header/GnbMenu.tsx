@@ -74,12 +74,13 @@ export default function GnbMenu({ items, hideDefaultItems }: GnbMenuProps) {
 
   return (
     <ul className="flex items-center gap-x-3">
-      {renderItems?.map((item) => (
+      {renderItems?.map((item, idx) => (
         <IconUtil
+          key={idx}
           onClick={item.onClick}
           icon={item.icon}
           fontSize={item.fontSize}
-          style={item.style}
+          styles={item.style}
         />
       ))}
     </ul>

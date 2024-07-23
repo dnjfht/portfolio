@@ -43,8 +43,9 @@ export default function SnsMenu({
 
   return (
     <ul className={`${hiddenStyle} flex items-center gap-x-6`}>
-      {renderItems?.map((item) => (
+      {renderItems?.map((item, idx) => (
         <IconUtil
+          key={idx}
           onClick={() => {
             window.open(item.link, "_blank");
           }}

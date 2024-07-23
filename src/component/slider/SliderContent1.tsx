@@ -3,9 +3,9 @@ import TextUtil from "../category/TextUtil";
 import IconUtil from "../header/IconUtil";
 import { SliderContentType } from "../../types/slider";
 import { AppPage } from "../../constants";
+import MainTitle from "./MainTitle";
 
 import { PiDownloadSimpleThin } from "react-icons/pi";
-import MainTitle from "./MainTitle";
 
 export default function SliderContent1({
   currentSlide,
@@ -13,9 +13,22 @@ export default function SliderContent1({
 }: SliderContentType) {
   const navigate = useNavigate();
 
+  const handleDownloadCV = () => {
+    const fileUrl = `${process.env.PUBLIC_URL}/download_file/YOOSEUNGMIN_CV.docx`;
+    const fileName = "YOOSEUNGMIN_CV.docx";
+
+    // a 태그를 생성하고 클릭 이벤트 트리거
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", fileName);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
-      <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:py-[0.2rem] box-border lg:flex flex-col justify-between">
+      <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:pt-[0.2rem] 3sm:pb-[2rem] box-border lg:flex flex-col justify-between">
         <MainTitle
           subTitle="Let me intro myself"
           mainTitle={["코드를 통하여 소통하는", "개발자 유승민"]}
@@ -29,11 +42,14 @@ export default function SliderContent1({
           알고 있다는 것에 안주하지 않고 끊임없이 노력하는 개발자가 되겠습니다.
         </p>
 
-        <div className="flex items-center w-full mt-10 font-black gap-x-5 lg:mt-0">
+        <div
+          className="flex items-center w-full mt-10 font-black gap-x-5 lg:mt-0"
+          onClick={handleDownloadCV}
+        >
           <IconUtil
             icon={<PiDownloadSimpleThin />}
             fontSize="lg:text-[2rem] text-[1.5rem]"
-            style="lg:p-8 p-5 rounded-full border-[1px] border-solid border-light-text dark:border-dark-text"
+            styles="lg:p-8 p-5 rounded-full border-[1px] border-solid border-light-text dark:border-dark-text"
           />
           <p>Download CV</p>
         </div>
@@ -52,7 +68,7 @@ export default function SliderContent1({
             onClick={() => navigate(AppPage.ABOUT)}
             fontSize="text-[1.8rem]"
             fontWeight="font-black"
-            style="text-dark-text"
+            styles="text-dark-text"
           />
           <p className="mt-1 font-semibold text-text-4 text-[1.1rem]">
             Let me intro myself

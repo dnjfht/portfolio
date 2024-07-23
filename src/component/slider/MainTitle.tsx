@@ -11,11 +11,20 @@ export default function MainTitle({ subTitle, mainTitle }: MainTitleProps) {
         {subTitle}
       </div>
 
-      {mainTitle.map((title) => (
-        <h1 className="xl:text-[3.4rem] lg:text-[2.8rem] text-[2.2rem] font-black mt-4">
-          {title}
+      <>
+        {mainTitle.map((title, idx) => (
+          <h1
+            key={idx}
+            className="block 2sm:block 3sm:hidden xl:text-[3.4rem] lg:text-[2.8rem] text-[2.2rem] font-black mt-4"
+          >
+            {title}
+          </h1>
+        ))}
+
+        <h1 className="hidden 2sm:hidden 3sm:block xl:text-[3.4rem] lg:text-[2.8rem] text-[2.2rem] font-black mt-4">
+          {mainTitle[0]} {mainTitle[1]}
         </h1>
-      ))}
+      </>
     </div>
   );
 }

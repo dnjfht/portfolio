@@ -16,13 +16,14 @@ type CategoryMenuType = {
 export default function CategoryMenu({ items, style }: CategoryMenuProps) {
   return (
     <ul className={`${style}`}>
-      {items.map((item) => (
+      {items.map((item, idx) => (
         <TextUtil
+          key={idx}
           text={item.text}
           fontSize={item.fontSize}
           fontWeight={item.fontWeight}
           onClick={item.onClick}
-          style={item?.style}
+          styles={item?.style}
         />
       ))}
     </ul>

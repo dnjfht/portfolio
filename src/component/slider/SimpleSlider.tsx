@@ -24,20 +24,20 @@ export default function SimpleSlider() {
     fade: true,
     infinite: true,
     autoplay: true,
-    speed: 700,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
     prevArrow: (
       <PrevArrow
         icon={<PiArrowSquareLeftLight />}
-        styles="text-[2.4rem] text-[white] absolute bottom-40 right-44 z-[9999]"
+        styles="text-[2.4rem] text-[white] absolute bottom-40 right-44"
       />
     ),
     nextArrow: (
       <NextArrow
         icon={<PiArrowSquareRightLight />}
-        styles="text-[2.4rem] text-[white] absolute bottom-40 right-20 z-[9999]"
+        styles="text-[2.4rem] text-[white] absolute bottom-40 right-20"
       />
     ),
     afterChange: (current: any) => setCurrentSlide(current),

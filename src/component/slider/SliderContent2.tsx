@@ -21,7 +21,7 @@ export default function SliderContent2({
         <div className="flex w-full mt-8 lg:h-full gap-x-8"></div>
       </div>
 
-      <div className="relative w-full lg:h-full bg-[#ff0000] lg:w-1/3">
+      <div className="relative w-full lg:h-full lg:w-1/3">
         <img
           className="object-cover object-center w-full lg:h-full"
           src={process.env.PUBLIC_URL + "/images/main_slider/img2.jpg"}
@@ -34,7 +34,7 @@ export default function SliderContent2({
             onClick={() => navigate(AppPage.PORTFOLIO)}
             fontSize="text-[1.8rem]"
             fontWeight="font-black"
-            style="text-dark-text"
+            styles="text-dark-text"
           />
           <p className="mt-1 font-semibold text-text-4 text-[1.1rem]">
             Let me intro my portfolio

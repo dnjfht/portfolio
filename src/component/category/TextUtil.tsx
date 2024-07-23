@@ -3,7 +3,7 @@ interface TextUtilProps {
   fontSize?: string;
   fontWeight?: string;
   onClick?: () => void;
-  style?: string;
+  styles?: string;
 }
 
 export default function TextUtil({
@@ -11,13 +11,12 @@ export default function TextUtil({
   fontSize,
   fontWeight,
   onClick,
-  style,
+  styles,
 }: TextUtilProps) {
-  console.log(text, style);
   return (
     <li
       onClick={onClick}
-      className={`${fontSize} ${fontWeight} ${style} hover:text-[#1ff4a6] dark:hover:text-[#1ff4a6] transition-color duration-500 cursor-pointer list-none`}
+      className={`${fontSize} ${fontWeight} ${styles} hover:text-[#1ff4a6] dark:hover:text-[#1ff4a6] transition-color duration-500 cursor-pointer list-none`}
     >
       {text}
     </li>

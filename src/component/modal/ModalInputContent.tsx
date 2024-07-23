@@ -2,9 +2,12 @@ import { SyntheticEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "../input/Input";
 import TextArea from "../input/TextArea";
+import { useSetRecoilState } from "recoil";
+import { ismodalOpenState } from "../../recoil/modal";
 
 export default function ModalInputContent() {
   const formRef = useRef<HTMLFormElement>(null);
+  const setIsModalOpen = useSetRecoilState(ismodalOpenState);
 
   const style = { mt: 3, width: "100%", outline: "none" };
   const style2 = { mt: 5, width: "100%", outline: "none" };
@@ -26,6 +29,7 @@ export default function ModalInputContent() {
           () => {
             console.log("SUCCESS!");
             alert("메일이 성공적으로 전송되었습니다.");
+            setIsModalOpen(false);
           },
           (error) => {
             console.log("FAILED...", error.text);
