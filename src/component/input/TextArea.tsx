@@ -3,6 +3,7 @@ import useInput from "../../customhook/useInput";
 
 interface InputProps {
   isRequired?: boolean;
+  name?: string;
   label: string;
   placeholder?: string;
   rows: number;
@@ -12,6 +13,7 @@ interface InputProps {
 
 export default function TextArea({
   isRequired,
+  name,
   label,
   placeholder,
   rows,
@@ -24,6 +26,7 @@ export default function TextArea({
     <TextField
       required={isRequired}
       multiline
+      name={name}
       label={label}
       id="outlined-multiline-static"
       rows={rows}

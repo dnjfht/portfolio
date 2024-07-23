@@ -4,6 +4,7 @@ import useInput from "../../customhook/useInput";
 interface InputProps {
   isRequired?: boolean;
   type: string;
+  name?: string;
   label: string;
   placeholder?: string;
   style?: React.CSSProperties;
@@ -13,6 +14,7 @@ interface InputProps {
 export default function Input({
   isRequired,
   type,
+  name,
   label,
   placeholder,
   style,
@@ -24,6 +26,7 @@ export default function Input({
     <TextField
       required={isRequired}
       type={type}
+      name={name}
       label={label}
       id="outlined-required"
       placeholder={placeholder}

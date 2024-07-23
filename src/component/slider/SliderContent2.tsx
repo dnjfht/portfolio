@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { SliderContentType } from "../../types/slider";
 import TextUtil from "../category/TextUtil";
 import { AppPage } from "../../constants";
+import MainTitle from "./MainTitle";
 
 export default function SliderContent2({
   currentSlide,
@@ -12,7 +13,12 @@ export default function SliderContent2({
   return (
     <>
       <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:py-[0.2rem] box-border lg:flex flex-col justify-between">
-        Let me intro my portfolio
+        <MainTitle
+          subTitle="Let me intro portfolio"
+          mainTitle={["지금까지 작업했던 사이트"]}
+        />
+
+        <div className="flex w-full mt-8 lg:h-full gap-x-8"></div>
       </div>
 
       <div className="relative w-full lg:h-full bg-[#ff0000] lg:w-1/3">

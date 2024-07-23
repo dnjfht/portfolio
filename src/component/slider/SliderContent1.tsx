@@ -5,6 +5,7 @@ import { SliderContentType } from "../../types/slider";
 import { AppPage } from "../../constants";
 
 import { PiDownloadSimpleThin } from "react-icons/pi";
+import MainTitle from "./MainTitle";
 
 export default function SliderContent1({
   currentSlide,
@@ -15,18 +16,10 @@ export default function SliderContent1({
   return (
     <>
       <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:py-[0.2rem] box-border lg:flex flex-col justify-between">
-        <div className="w-full text-[1.3rem] font-bold ">
-          <div className="flex items-center w-full gap-x-6 text-[rgb(0,255,208)]">
-            <div className="w-16 h-[2px] bg-gradient-to-r from-[#449bff] to-[#00ffd5]" />
-            <p>Let me intro myself</p>
-          </div>
-
-          <h1 className="xl:text-[3.4rem] lg:text-[2.8rem] text-[2.2rem] font-black mt-4">
-            코드를 통하여 소통하는
-            <br />
-            개발자 유승민
-          </h1>
-        </div>
+        <MainTitle
+          subTitle="Let me intro myself"
+          mainTitle={["코드를 통하여 소통하는", "개발자 유승민"]}
+        />
 
         <p className="lg:text-[1rem] text-[0.875rem] lg:mt-0 mt-10">
           사용자들의 눈과 손이 더욱 즐거웠으면 하는 바램.
