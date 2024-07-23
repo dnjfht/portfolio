@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { SliderContentType } from "../../types/slider";
 import TextUtil from "../category/TextUtil";
-import { AppPage } from "../../constants";
+import { AppPage, portfolioData } from "../../constants";
 import MainTitle from "./MainTitle";
+import PortfolioCard from "./portfolio/PortfolioCard";
 
 export default function SliderContent2({
   currentSlide,
@@ -10,15 +11,39 @@ export default function SliderContent2({
 }: SliderContentType) {
   const navigate = useNavigate();
 
+  const portfolioDataSlice = portfolioData.slice(0, 3);
+
   return (
     <>
-      <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:py-[0.2rem] box-border lg:flex flex-col justify-between">
+      <div className="w-full lg:h-full lg:w-2/3 px-[10%] lg:px-[6rem] lg:pt-[0.4rem] lg:pb-[2rem] 2sm:py-[2rem] 3sm:py-[0.2rem] box-border lg:flex flex-col justify-between overflow-y-scroll">
         <MainTitle
           subTitle="Let me intro portfolio"
           mainTitle={["지금까지 작업했던 사이트"]}
         />
 
-        <div className="flex w-full mt-8 lg:h-full gap-x-8"></div>
+        <div className="w-full h-full mt-12 lg:mt-12 sm:mt-15">
+          <div className="sm:flex justify-end w-full text-[0.75rem] text-[#e7e7e7]">
+            <button
+              onClick={() => {
+                navigate("/portfolio");
+              }}
+              className="mb-5 hover:text-[#00ffd0] transition-all duration-700"
+            >
+              포트폴리오 더 보기
+            </button>
+          </div>
+
+          <div className="flex flex-col flex-wrap w-full xl:flex-nowrap sm:flex-wrap sm:flex-row sm:justify-between">
+            {portfolioDataSlice.map((data) => (
+              <PortfolioCard
+                key={data.id}
+                img={data.img}
+                title={data.title}
+                des={data.des}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="relative w-full lg:h-full lg:w-1/3">
