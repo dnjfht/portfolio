@@ -75,7 +75,7 @@ export default function SliderContent1({
           </p>
         </div>
 
-        <div className="absolute bottom-[164px] right-32 text-[1.2rem] text-[white]">
+        <div className="absolute bottom-[164px] lg:right-32 3sm:right-20 text-[1.2rem] text-[white]">
           {currentSlide + 1} / {totalSlides}
         </div>
       </div>

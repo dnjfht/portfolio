@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { isDarkModeState } from "../../recoil/darkMode";
 import GnbMenu from "./GnbMenu";
 import SnsMenu from "./SnsMenu";
 import { AppPage } from "../../constants";
+import { currentScreenSizeState } from "../../recoil/screenSize";
 
 export default function Header() {
   const navigate = useNavigate();
 
   const setIsDarkMode = useSetRecoilState(isDarkModeState);
 
-  const [currentScreenSize, setCurrentScreenSize] = useState<string>("");
+  const [currentScreenSize, setCurrentScreenSize] = useRecoilState(
+    currentScreenSizeState
+  );
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -49,7 +52,7 @@ export default function Header() {
       : "block";
 
   return (
-    <div className="box-border fixed top-0 left-0 flex w-full py-6 bg-light-background dark:bg-[url('./assets/images/bg.png')] lg:py-10 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)] z-[99]">
+    <div className="box-border fixed top-0 left-0 flex w-full py-6 bg-light-background dark:bg-[url('./assets/images/bg.png')] lg:py-10 lg:shadow-none shadow-[0_0_32px_-16px_rgba(0,0,0,0.5)] z-[100]">
       <div className="box-border w-2/3 px-[10%] lg:px-[6rem] flex justify-between">
         <div
           onClick={() => {

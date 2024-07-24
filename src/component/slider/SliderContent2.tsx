@@ -22,14 +22,14 @@ export default function SliderContent2({
         />
 
         <div className="w-full h-full mt-12 lg:mt-12 sm:mt-15">
-          <div className="sm:flex justify-end w-full text-[0.75rem] text-[#e7e7e7]">
+          <div className="sm:flex justify-end w-full sm:text-[0.875rem] text-[0.75rem] text-[#5a5a5a] dark:text-[#e7e7e7]">
             <button
               onClick={() => {
                 navigate("/portfolio");
               }}
-              className="mb-5 hover:text-[#00ffd0] transition-all duration-700"
+              className="mb-5 hover:text-[#00d1b2] transition-all duration-700"
             >
-              포트폴리오 더 보기
+              더 보기
             </button>
           </div>
 
@@ -66,7 +66,7 @@ export default function SliderContent2({
           </p>
         </div>
 
-        <div className="absolute bottom-[164px] right-32 text-[1.2rem] text-[white]">
+        <div className="absolute bottom-[164px] lg:right-32 right-20 text-[1.2rem] text-[white]">
           {currentSlide + 1} / {totalSlides}
         </div>
       </div>
